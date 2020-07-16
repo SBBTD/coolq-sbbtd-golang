@@ -1,4 +1,4 @@
-module github.com/Tnze/CoolQ-Golang-Plugin
+module github.com/SBBTD/coolq-sbbtd-golang
 
 go 1.14
 
