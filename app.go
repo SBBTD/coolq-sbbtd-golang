@@ -43,7 +43,6 @@ func init() {
 	cqp.Start = onStart
 	cqp.GroupMsg = onGroupMsg
 	cqp.DiscussMsg = onDiscussMsg
-	cqp.GroupMemberIncrease = onGroupMemberIncrease
 }
 
 func onStart() int32 {
@@ -154,10 +153,5 @@ func onDiscussMsg(subType, msgID int32, fromDiscuss, fromQQ int64, msg string, f
 	if isInInt64List(blockQQList, fromQQ) {
 		return 1
 	}
-	return 0
-}
-
-func onGroupMemberIncrease(subType, sendTime int32, fromGroup, fromQQ, beingOperateQQ int64) int32 {
-	cqp.SendGroupMsg(fromGroup, fmt.Sprintf("欢迎 [CQ:at,qq=%d] 加群！\nQQ：%d\n管理：%d", beingOperateQQ, beingOperateQQ, fromQQ))
 	return 0
 }
